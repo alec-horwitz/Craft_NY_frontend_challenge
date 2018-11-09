@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Segment, Divider } from 'semantic-ui-react'
 import AnalogContainer from './containers/AnalogContainer';
 import FavoritesContainer from './containers/FavoritesContainer';
-import { Route, NavLink, Switch } from "react-router-dom"
+import { Route, NavLink, Switch, withRouter } from "react-router-dom"
 import {connect} from 'react-redux'
 // import './App.css';
 
@@ -53,4 +53,4 @@ function mapDispatchToProps(dispatch){
 }
 
 // export default App;
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

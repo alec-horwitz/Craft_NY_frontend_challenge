@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react'
 import PostsComponent from '../components/PostsComponent';
 import {connect} from 'react-redux'
+import { Route, NavLink, Switch, withRouter } from "react-router-dom"
 
 class FavoritesContainer extends Component {
   componentDidMount = () => {
@@ -31,4 +32,4 @@ function mapDispatchToProps(dispatch){
 }
 
 // export default FavoritesContainer;
-export default connect(mapStateToProps, mapDispatchToProps)(FavoritesContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FavoritesContainer));

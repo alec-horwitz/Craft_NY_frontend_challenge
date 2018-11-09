@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react'
 import {connect} from 'react-redux'
+import { Route, NavLink, Switch, withRouter } from "react-router-dom"
 
 class PostsComponent extends Component {
 
@@ -24,4 +25,4 @@ function mapDispatchToProps(dispatch){
 }
 
 // export default PostsComponent;
-export default connect(mapStateToProps, mapDispatchToProps)(PostsComponent);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostsComponent));
