@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Segment, Divider } from 'semantic-ui-react'
+import { Container, Segment, Divider, Icon } from 'semantic-ui-react'
 import AnalogContainer from './containers/AnalogContainer';
 import FavoritesContainer from './containers/FavoritesContainer';
 import { Route, NavLink, Switch, withRouter } from "react-router-dom"
@@ -23,14 +23,13 @@ class App extends Component {
       <div className="app">
         <div className="nav" >
           <ul >
-            <li ><NavLink activeClassName="active" to="/home" > /r/analog </NavLink></li>
-            <li ><NavLink activeClassName="active" to="/favs" > Favorites({num}) </NavLink></li>
+            <li ><NavLink activeClassName="active" to="/home" > <Icon name='reddit alien' />/r/analog </NavLink></li>
+            <li ><NavLink activeClassName="active" to="/favs" > <Icon name='heart' />Favorites({this.props.favorited.length}) </NavLink></li>
           </ul>
         </div>
-        <Divider hidden />
-        <Divider hidden />
-        <Divider hidden />
-        App
+        <br/>
+        <br/>
+        <br/>
         <Switch>
           <Route path="/home" component={AnalogContainer} />
           <Route path="/favs" component={FavoritesContainer} />

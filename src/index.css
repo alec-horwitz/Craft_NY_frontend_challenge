@@ -1,8 +1,7 @@
-body {
-  text-align: center;
-}
 
 .nav {
+  margin-top: 0px;
+  padding-top: 0px;
   position: fixed;
   width: 100%;
   background-color: white;
@@ -55,4 +54,10 @@ body {
   color: #57a2e4;
   font-family: Helvetica;
   font-size: 16;
+}
+
+body {
+  margin-top: 0px;
+  padding-top: 0px;
+  text-align: center;
 }

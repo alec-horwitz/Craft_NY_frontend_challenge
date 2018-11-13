@@ -5,15 +5,21 @@ import {connect} from 'react-redux'
 import { Route, NavLink, Switch, withRouter } from "react-router-dom"
 
 class FavoritesContainer extends Component {
-  componentDidMount = () => {
-    this.props.toggleList(false)
+  // componentDidMount = () => {
+  //   this.props.toggleList(false)
+  // }
+
+
+  getAllRows = () => {
+    return this.props.favorited.map(post => {
+      return <PostsComponent post={post}/>
+    })
   }
+
   render() {
     return (
       <Container>
-        --FavoritesContainer
-        <PostsComponent />
-        <PostsComponent />
+        {this.getAllRows()}
       </Container>
     );
   }

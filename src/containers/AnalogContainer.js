@@ -5,15 +5,20 @@ import {connect} from 'react-redux'
 import { Route, NavLink, Switch, withRouter } from "react-router-dom"
 
 class AnalogContainer extends Component {
-  componentDidMount = () => {
-    this.props.toggleList()
+  // componentDidMount = () => {
+  //   this.props.toggleList()
+  // }
+
+  getAllRows = () => {
+    return this.props.listing.map(post => {
+      return <PostsComponent post={post}/>
+    })
   }
+
   render() {
     return (
       <Container>
-        --AnalogContainer
-        <PostsComponent />
-        <PostsComponent />
+        {this.getAllRows()}
       </Container>
     );
   }

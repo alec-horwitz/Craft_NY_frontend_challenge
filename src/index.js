@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import './semantic/dist/semantic.min.css';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom"
@@ -8,6 +7,7 @@ import {createStore, compose} from 'redux'
 import reducer from './reducers/reducer'
 import {Provider} from 'react-redux'
 import { loadState, saveState } from './localStorage'
+import './index.css';
 
 const persistedState = loadState();
 const store = createStore(reducer,persistedState, compose(
