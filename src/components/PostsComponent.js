@@ -19,7 +19,6 @@ class PostsComponent extends Component {
           />
           <Card.Content>
             <Card.Header>{this.props.post.data.title}</Card.Header>
-            <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
           </Card.Content>
           <Card.Content extra>
             <Icon name='user' />

@@ -23,7 +23,7 @@ class App extends Component {
       <div className="app">
         <div className="nav" >
           <ul >
-            <li ><NavLink activeClassName="active" to="/home" > <Icon name='reddit alien' />/r/analog </NavLink></li>
+            <li ><NavLink activeClassName="active" to="/" exact > <Icon name='reddit alien' />/r/analog </NavLink></li>
             <li ><NavLink activeClassName="active" to="/favs" > <Icon name='heart' />Favorites({this.props.favorited.length}) </NavLink></li>
           </ul>
         </div>
@@ -31,7 +31,7 @@ class App extends Component {
         <br/>
         <br/>
         <Switch>
-          <Route path="/home" component={AnalogContainer} />
+          <Route path="/" exact component={AnalogContainer} />
           <Route path="/favs" component={FavoritesContainer} />
         </Switch>
       </div>
