@@ -4,9 +4,6 @@ function reducer(state, action) {
     case "ASSIGN_LISTING":
       return {...state, listing: action.payload}
 
-    case "TOGGLE_LIST":
-      return {...state, toggle: action.payload}
-
     case "TOGGLE_FAV":
       const index = state.favorited.indexOf(action.payload)
       if (index === -1) {

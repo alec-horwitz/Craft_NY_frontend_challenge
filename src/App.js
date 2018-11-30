@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Segment, Divider, Icon } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 import AnalogContainer from './containers/AnalogContainer';
 import FavoritesContainer from './containers/FavoritesContainer';
 import { Route, NavLink, Switch, withRouter } from "react-router-dom"
@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   render() {
-    let num = this.props.listing.length
     return (
       <div className="app">
         <div className="nav" >
@@ -51,5 +50,4 @@ function mapDispatchToProps(dispatch){
   }
 }
 
-// export default App;
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

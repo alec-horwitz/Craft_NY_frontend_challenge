@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react'
 import PostsComponent from '../components/PostsComponent';
 import {connect} from 'react-redux'
-import { Route, NavLink, Switch, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
+import UUID from 'uuid';
 
 class AnalogContainer extends Component {
-  // componentDidMount = () => {
-  //   this.props.toggleList()
-  // }
 
   getAllRows = () => {
     return this.props.listing.map(post => {
-      return <PostsComponent post={post}/>
+      return <PostsComponent key={UUID()} post={post}/>
     })
   }
 
@@ -28,13 +26,4 @@ function mapStateToProps(state){
   return state
 }
 
-function mapDispatchToProps(dispatch){
-  return {
-    toggleList: (bool) => {
-      dispatch({type: "TOGGLE_LIST", payload: bool})
-    }
-  }
-}
-
-// export default AnalogContainer;
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AnalogContainer));
+export default withRouter(connect(mapStateToProps)(AnalogContainer));

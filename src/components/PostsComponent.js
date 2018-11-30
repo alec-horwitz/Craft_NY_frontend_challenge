@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Image, Card, Icon, Divider } from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import { Route, NavLink, Switch, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 class PostsComponent extends Component {
 
@@ -37,14 +37,10 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-    toggleList: () => {
-      dispatch({type: "TOGGLE_LIST"})
-    },
     toggleFav: (fav) => {
       dispatch({type: "TOGGLE_FAV", payload: fav})
     },
   }
 }
 
-// export default PostsComponent;
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostsComponent));
